@@ -5,21 +5,55 @@
 <html dir="auto" {{lang}}>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style type="text/css">
     table td {
       border-collapse: collapse;
     }
+
+    /* Mobile responsiveness */
+    @media only screen and (max-width: 600px) {
+      .email-container {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 10px !important;
+      }
+      .content-block {
+        margin: 10px 0 !important;
+        padding: 20px !important;
+      }
+      .header-logo {
+        width: 200px !important;
+        height: auto !important;
+      }
+    }
+
     {{styles}}
   </style>
 </head>
-<body {{attributes}} style="width: 100%!important; margin: 0; padding: 0;">
-  <div style="font-family: 'system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Oxygen-Sans','Ubuntu','Cantarell','Helvetica Neue','Arial','sans-serif'; font-size: 14px; line-height: 1.5; color:#444444;">
-    {{content}}
-  </div><br/>
-  <div style="font-family: 'system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Oxygen-Sans','Ubuntu','Cantarell','Helvetica Neue','Arial','sans-serif'; font-size: 12px; line-height: 1.5; color: #49545c; margin: 10px 0 14px 0; padding-top: 10px;">
-    {{footer}} {{footer_link}}
-  </div><br/>
-  {{quoted_content}}
+<body {{attributes}} style="width: 100%!important; margin: 0; padding: 0; background-color: #f7f7f9; font-family: 'Euclid Circular B', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <!-- Header with Socket logo -->
+  <div style="background-color: #553C9A; text-align: center; padding: 20px 0;">
+    <img src="https://socket.dev/images/logo-280x80.png" alt="Socket" class="header-logo" style="width: 280px; height: 80px; max-width: 100%; height: auto;" />
+  </div>
+
+  <!-- Main email container -->
+  <div class="email-container" style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    <!-- Content block -->
+    <div class="content-block" style="background-color: #ffffff; border-radius: 8px; padding: 30px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); font-family: 'Euclid Circular B', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 1.6; color: #444444;">
+      {{content}}
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align: center; font-family: 'Euclid Circular B', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 12px; line-height: 1.5; color: #49545c; margin: 20px 0; padding: 10px;">
+      {{footer}} {{footer_link}}
+    </div>
+
+    <!-- Quoted content -->
+    <div style="margin-top: 20px;">
+      {{quoted_content}}
+    </div>
+  </div>
 </body>
 </html>
 ```
