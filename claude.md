@@ -1,59 +1,28 @@
 # Claude Instructions for Zendesk Email Theme
 
-```html
-<!DOCTYPE html>
-<html dir="auto" {{lang}}>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style type="text/css">
-    table td {
-      border-collapse: collapse;
-    }
+## Project Overview
+This project contains Socket's custom email template for Zendesk notifications. The template includes Socket branding, responsive design, and all required Zendesk placeholders.
 
-    /* Mobile responsiveness */
-    @media only screen and (max-width: 600px) {
-      .email-container {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 10px !important;
-      }
-      .content-block {
-        margin: 10px 0 !important;
-        padding: 20px !important;
-      }
-      .header-logo {
-        width: 200px !important;
-        height: auto !important;
-      }
-    }
+## File Structure
+- `claude.md` - This file containing project instructions
+- `email-template.html` - The Zendesk email template with Socket branding
+- `README.md` - Project documentation (if needed)
 
-    {{styles}}
-  </style>
-</head>
-<body {{attributes}} style="width: 100%!important; margin: 0; padding: 0; background-color: #f7f7f9; font-family: 'Euclid Circular B', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
-  <!-- Header with Socket logo -->
-  <div style="background-color: #553C9A; text-align: center; padding: 20px 0;">
-    <img src="https://socket.dev/images/logo-280x80.png" alt="Socket" class="header-logo" style="width: 280px; height: 80px; max-width: 100%; height: auto;" />
-  </div>
+## Development Workflow
+- When you're done with a task, commit changes to GitHub every time
+- Use descriptive commit messages
+- Keep the template responsive and accessible
+- Test changes across different email clients when possible
 
-  <!-- Main email container -->
-  <div class="email-container" style="max-width: 600px; margin: 0 auto; padding: 20px;">
-    <!-- Content block -->
-    <div class="content-block" style="background-color: #ffffff; border-radius: 8px; padding: 30px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); font-family: 'Euclid Circular B', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 1.6; color: #444444;">
-      {{content}}
-    </div>
+## Template Requirements
+- **Logo**: Socket logo (https://socket.dev/images/logo-280x80.png)
+- **Header background**: Purple `#553C9A`
+- **Font**: Euclid Circular B with system font fallbacks
+- **Body background**: Light gray `#f7f7f9`
+- **Content block**: White background, rounded corners, padding, subtle shadow
+- **Footer**: Centered, smaller font, muted color `#49545c`
+- **Responsive**: Mobile-friendly design
+- **Zendesk placeholders**: Must preserve `{{content}}`, `{{footer}}`, `{{footer_link}}`, `{{quoted_content}}`, `{{lang}}`, `{{attributes}}`, `{{styles}}`
 
-    <!-- Footer -->
-    <div style="text-align: center; font-family: 'Euclid Circular B', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 12px; line-height: 1.5; color: #49545c; margin: 20px 0; padding: 10px;">
-      {{footer}} {{footer_link}}
-    </div>
-
-    <!-- Quoted content -->
-    <div style="margin-top: 20px;">
-      {{quoted_content}}
-    </div>
-  </div>
-</body>
-</html>
-```
+## Usage
+The `email-template.html` file should be copied into Zendesk's email template settings under Admin > Channels > Email > Templates.
